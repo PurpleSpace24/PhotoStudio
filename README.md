@@ -22,6 +22,7 @@
 - Показване на архивираните снимки, с име на собственик, което съдържа низа „Ivan“ и датата им на архивиране
 
 ---EN---
+
 In a photo studio (PhotoStudio) pictures are taken and printed on paper (Picture). 
 Photos have a unique identification number (id), size, creation date, owner name and order type (EXPESS, FAST, STANDARD). 
 The natural order of the photos is by id.
