@@ -1,10 +1,8 @@
 package ENTITY;
 
 import java.util.Date;
-import java.util.List;
 
-public class Picture{
-
+public class Picture {
     private long id;
     private Date date_created;
     private String owner_name;

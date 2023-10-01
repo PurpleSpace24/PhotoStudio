@@ -33,5 +33,4 @@ public class PhotoStudio implements SP {
             System.out.println(picture);
         }
     }
-
 }
