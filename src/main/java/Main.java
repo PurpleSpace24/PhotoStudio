@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Display the photo that has the highest id: ");
         photoStudio.biggerID();
         //System.out.println("Return the collection of photos that are of the order type EXPRESS: ");
-        //photoStudio.pictureEXPRESS(); // not working. -> Why? -> I dont know :(
+        //photoStudio.pictureEXPRESS(); // :(
         System.out.println("\nDisplay photos that are larger than 2MB in size: ");
         photoStudio.pictureMoreThan2MB();
     }
