@@ -1,6 +1,10 @@
 package ENTITY;
 
 public interface SP {
-    public void showPictures();
 
+    void showPictures();
+    void OrderByDateThenOwnerName();
+    void biggerID();
+    void pictureEXPRESS();
+    void pictureMoreThan2MB();
 }
