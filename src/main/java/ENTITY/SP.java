@@ -7,4 +7,6 @@ public interface SP {
     void biggerID();
     void pictureEXPRESS();
     void pictureMoreThan2MB();
+
+    void sortByOrderType();
 }
