@@ -76,4 +76,12 @@ public class PhotoStudio implements SP {
             this.pictures.stream().filter(picture1 -> picture1.getFile_size() > 2.0).forEach(System.out::println);
         }
     }
+    
+    public void sortByOrderType(){
+        if (pictures.isEmpty()) {
+            System.out.println("There is no pictures!");
+        }else {
+            pictures.stream().sorted(Picture.pictureByOrder).forEach(System.out::println);
+        }
+    }
 }
