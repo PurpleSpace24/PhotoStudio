@@ -31,11 +31,7 @@ public class PhotoStudio implements SP {
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
         }else {
-            Collections.sort(pictures, Comparator.comparingLong(Picture::getId));
-
-            for (Picture picture : pictures) {
-                System.out.println(picture);
-            }
+            pictures.stream().sorted(Picture.pictureByID).forEach(System.out::println);
         }
     }
 
@@ -44,11 +40,7 @@ public class PhotoStudio implements SP {
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
         }else {
-            pictures.sort(Comparator.comparing(Picture::getDate_created).thenComparing(Picture::getOwner_name));
-
-            for (Picture picture : pictures) {
-                System.out.println(picture);
-            }
+            pictures.stream().sorted(Picture.pictureByDate.thenComparing(Picture.pictureByName)).forEach(System.out::println);
         }
     }
 
@@ -72,7 +64,7 @@ public class PhotoStudio implements SP {
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
         }else{
-
+            this.pictures.stream().filter(picture -> picture.getOrder_type().equals(Order.EXPRESS)).forEach(System.out::println);
         }
     }
 
@@ -81,17 +73,7 @@ public class PhotoStudio implements SP {
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
         }else {
-            List<Picture> picture = new ArrayList<>();
-
-            for (Picture picture1 : pictures) {
-                if (picture1.getFile_size() > 2.0) {
-                    picture.add(picture1);
-                }
-            }
-            
-            for (Picture pic : picture) {
-                System.out.println(pic);
-            }
+            this.pictures.stream().filter(picture1 -> picture1.getFile_size() > 2.0).forEach(System.out::println);
         }
     }
 }
