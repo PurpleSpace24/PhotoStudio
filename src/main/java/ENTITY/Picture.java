@@ -79,6 +79,14 @@ public class Picture {
         }
     };
 
+    public static Comparator<Picture> pictureByOrder = new Comparator<Picture>() {
+        @Override
+        public int compare(Picture picture, Picture picture1) {
+            return picture.getOrder_type().compareTo(picture1.getOrder_type());
+        }
+    };
+
+
     @Override
     public String toString() {
         return "Picture{" +
