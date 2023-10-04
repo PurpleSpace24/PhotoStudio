@@ -1,4 +1,4 @@
-import ENTITY.Order;
+import ENTITY.OrderType;
 import ENTITY.PhotoStudio;
 import ENTITY.Picture;
 
@@ -13,12 +13,12 @@ public class Main {
 
         PhotoStudio photoStudio = new PhotoStudio();
 
-        Picture picture = new Picture(1, date, "Alice", Order.FAST, 0.5);
-        Picture picture2 = new Picture(3, date2, "Yana", Order.STANDARD, 1);
-        Picture picture5 = new Picture(5, date2, "Ana", Order.STANDARD, 5.4);
-        Picture picture3 = new Picture(2,date3, "Vanesa", Order.EXPRESS, 3.4);
-        Picture picture4 = new Picture(4,date4, "Bob", Order.EXPRESS, 2.1);
-        Picture picture6 = new Picture(6,date4, "Barbara", Order.FAST, 2.6);
+        Picture picture = new Picture(1, date, "Alice", OrderType.FAST, 0.5);
+        Picture picture2 = new Picture(3, date2, "Yana", OrderType.STANDARD, 1);
+        Picture picture5 = new Picture(5, date2, "Ana", OrderType.STANDARD, 5.4);
+        Picture picture3 = new Picture(2,date3, "Vanesa", OrderType.EXPRESS, 3.4);
+        Picture picture4 = new Picture(4,date4, "Bob", OrderType.EXPRESS, 2.1);
+        Picture picture6 = new Picture(6,date4, "Barbara", OrderType.FAST, 2.6);
 
         photoStudio.addPicture(picture);
         photoStudio.addPicture(picture2);

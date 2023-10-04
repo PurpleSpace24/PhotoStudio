@@ -7,14 +7,14 @@ public class Picture {
     private long id;
     private LocalDate date_created;
     private String owner_name;
-    private OrderType order_Type_type;
+    private OrderType order_Type;
     private double file_size;
 
-    public Picture(long id, LocalDate date_created, String owner_name, OrderType order_Type_type, double file_size) {
+    public Picture(long id, LocalDate date_created, String owner_name, OrderType order_Type, double file_size) {
         this.id = id;
         this.date_created = date_created;
         this.owner_name = owner_name;
-        this.order_Type_type = order_Type_type;
+        this.order_Type= order_Type;
         this.file_size = file_size;
     }
 
@@ -43,11 +43,11 @@ public class Picture {
     }
 
     public OrderType getOrder_type() {
-        return order_Type_type;
+        return order_Type;
     }
 
-    public void setOrder_type(OrderType order_Type_type) {
-        this.order_Type_type = order_Type_type;
+    public void setOrder_type(OrderType order_Type) {
+        this.order_Type = order_Type;
     }
 
     public double getFile_size() {
@@ -93,7 +93,7 @@ public class Picture {
                 "id=" + id +
                 ", date_created=" + date_created +
                 ", owner_name='" + owner_name + '\'' +
-                ", order_type=" + order_Type_type +
+                ", order_type=" + order_Type +
                 ", file_size=" + file_size +
                 '}';
     }

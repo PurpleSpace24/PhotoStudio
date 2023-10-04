@@ -1,9 +1,6 @@
 package ENTITY;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class PhotoStudio implements SP {
 
@@ -64,7 +61,7 @@ public class PhotoStudio implements SP {
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
         }else{
-            this.pictures.stream().filter(picture -> picture.getOrder_type().equals(Order.EXPRESS)).forEach(System.out::println);
+            this.pictures.stream().filter(picture -> picture.getOrder_type().equals(OrderType.EXPRESS)).forEach(System.out::println);
         }
     }
 
@@ -76,7 +73,7 @@ public class PhotoStudio implements SP {
             this.pictures.stream().filter(picture1 -> picture1.getFile_size() > 2.0).forEach(System.out::println);
         }
     }
-    
+
     public void sortByOrderType(){
         if (pictures.isEmpty()) {
             System.out.println("There is no pictures!");
