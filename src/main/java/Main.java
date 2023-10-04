@@ -33,13 +33,15 @@ public class Main {
         System.out.println("Order by date then by owner name: ");
         photoStudio.OrderByDateThenOwnerName();
         System.out.println();
-        System.out.println("Display the photo that has the highest id: ");
+        System.out.println("Display the picture that has the highest id: ");
         photoStudio.biggerID();
         System.out.println();
-        System.out.println("Return the collection of photos that are of the order type EXPRESS: ");
+        System.out.println("Return the collection of pictures that are of the order type EXPRESS: ");
         photoStudio.pictureEXPRESS();
-        System.out.println("\nDisplay photos that are larger than 2MB in size: ");
+        System.out.println("\nDisplay pictures that are larger than 2MB in size: ");
         photoStudio.pictureMoreThan2MB();
+        System.out.println("\nDisplay pictures: STANDARD, FAST and EXPRESS: ");
+        photoStudio.sortByOrderType();
     }
 }
 
