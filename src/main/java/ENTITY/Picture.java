@@ -1,15 +1,16 @@
 package ENTITY;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Comparator;
 
 public class Picture {
     private long id;
-    private Date date_created;
+    private LocalDate date_created;
     private String owner_name;
     private Order order_type;
     private double file_size;
 
-    public Picture(long id, Date date_created, String owner_name, Order order_type, double file_size) {
+    public Picture(long id, LocalDate date_created, String owner_name, Order order_type, double file_size) {
         this.id = id;
         this.date_created = date_created;
         this.owner_name = owner_name;
@@ -25,11 +26,11 @@ public class Picture {
         this.id = id;
     }
 
-    public Date getDate_created() {
+    public LocalDate getDate_created() {
         return date_created;
     }
 
-    public void setDate_created(Date date_created) {
+    public void setDate_created(LocalDate date_created) {
         this.date_created = date_created;
     }
 
@@ -56,6 +57,27 @@ public class Picture {
     public void setFile_size(double file_size) {
         this.file_size = file_size;
     }
+
+    public static Comparator<Picture> pictureByDate = new Comparator<Picture>() {
+        @Override
+        public int compare(Picture picture, Picture picture1) {
+            return picture.getDate_created().compareTo(picture1.getDate_created());
+        }
+    };
+
+    public static Comparator<Picture> pictureByName = new Comparator<Picture>() {
+        @Override
+        public int compare(Picture picture, Picture picture1) {
+            return picture.getOwner_name().compareTo(picture1.getOwner_name());
+        }
+    };
+
+    public static Comparator<Picture> pictureByID = new Comparator<Picture>() {
+        @Override
+        public int compare(Picture picture, Picture picture1) {
+            return Long.compare(picture.getId(),(picture1.getId()));
+        }
+    };
 
     @Override
     public String toString() {
