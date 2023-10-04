@@ -18,12 +18,14 @@ public class Main {
         Picture picture5 = new Picture(5, date2, "Ana", Order.STANDARD, 5.4);
         Picture picture3 = new Picture(2,date3, "Vanesa", Order.EXPRESS, 3.4);
         Picture picture4 = new Picture(4,date4, "Bob", Order.EXPRESS, 2.1);
+        Picture picture6 = new Picture(6,date4, "Barbara", Order.FAST, 2.6);
 
         photoStudio.addPicture(picture);
         photoStudio.addPicture(picture2);
         photoStudio.addPicture(picture3);
         photoStudio.addPicture(picture4);
         photoStudio.addPicture(picture5);
+        photoStudio.addPicture(picture6);
 
         System.out.println("All pictures: ");
         photoStudio.showPictures();
@@ -33,8 +35,9 @@ public class Main {
         System.out.println();
         System.out.println("Display the photo that has the highest id: ");
         photoStudio.biggerID();
-        //System.out.println("Return the collection of photos that are of the order type EXPRESS: ");
-        //photoStudio.pictureEXPRESS(); // :(
+        System.out.println();
+        System.out.println("Return the collection of photos that are of the order type EXPRESS: ");
+        photoStudio.pictureEXPRESS();
         System.out.println("\nDisplay photos that are larger than 2MB in size: ");
         photoStudio.pictureMoreThan2MB();
     }
