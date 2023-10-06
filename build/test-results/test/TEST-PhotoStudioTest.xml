@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PhotoStudioTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-06T13:23:40" hostname="DESKTOP-HLB5EU9" time="0.017">
+  <properties/>
+  <testcase name="displayPictureArchiveByOwnerNameContainingIvan()" classname="PhotoStudioTest" time="0.017"/>
+  <system-out><![CDATA[Archived: Ivan, 2023-10-06
+Archived: Ivan, 2023-10-06
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

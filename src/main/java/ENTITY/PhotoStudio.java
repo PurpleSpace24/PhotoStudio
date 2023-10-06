@@ -1,26 +1,31 @@
 package ENTITY;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class PhotoStudio implements SP {
 
     private List<Picture> pictures;
+    private Map<Picture, LocalDate> picturesArchive;
 
     public PhotoStudio() {
         this.pictures = new ArrayList<>();
+        this.picturesArchive = new HashMap<Picture, LocalDate>();
     }
 
-    public List<Picture> getPictures() {
-        return pictures;
+    public Map<Picture, LocalDate> getPicturesArchive() {
+        return picturesArchive;
     }
 
-    public void setPictures(List<Picture> pictures) {
-        this.pictures = pictures;
+    public void setPicturesArchive(Map<Picture, LocalDate> picturesArchive) {
+        this.picturesArchive = picturesArchive;
     }
 
     // Add pictures
     public void addPicture(Picture picture){
-        pictures.add(picture);
+        if(!pictures.contains(picture)){
+            pictures.add(picture);
+        }
     }
 
     // Display pictures
@@ -79,6 +84,40 @@ public class PhotoStudio implements SP {
             System.out.println("There is no pictures!");
         }else {
             pictures.stream().sorted(Picture.pictureByOrder).forEach(System.out::println);
+        }
+    }
+
+    // ---------------
+
+    public void addToArchive(Picture picture, LocalDate archiveDate){
+        if (!picturesArchive.containsKey(picture)){
+            picturesArchive.put(picture, archiveDate);
+        }else{
+            System.out.println("This picture already exists!");
+        }
+    }
+
+    public void displayPictureArchiveByOwnerName(){
+        List<Picture> sortedArchivedPhotos = new ArrayList<>(picturesArchive.keySet());
+        sortedArchivedPhotos.stream().sorted(Comparator.comparing(Picture::getOwner_name)).forEach(picture -> {
+            LocalDate archiveDate = picturesArchive.get(picture);
+            System.out.println("Archived: " + picture.getOwner_name() + ", " + archiveDate);
+        });
+    }
+
+    public void displayPictureArchiveByOwnerNameContainingIvan() {
+        List<Picture> archivedPictures = new ArrayList<>(picturesArchive.keySet());
+        boolean anyIvanPhotosExist = archivedPictures.stream().anyMatch(picture -> picture.getOwner_name().contains("Ivan"));
+
+        if (anyIvanPhotosExist) {
+            archivedPictures.stream()
+                    .filter(picture -> picture.getOwner_name().contains("Ivan"))
+                    .forEach(picture -> {
+                        LocalDate archiveDate = picturesArchive.get(picture);
+                        System.out.println("Archived: " + picture.getOwner_name() + ", " + archiveDate);
+                    });
+        } else {
+            System.out.println("No archived photos with an owner name containing 'Ivan'!");
         }
     }
 }

@@ -9,4 +9,7 @@ public interface SP {
     void pictureMoreThan2MB();
 
     void sortByOrderType();
+
+    void displayPictureArchiveByOwnerName();
+    void displayPictureArchiveByOwnerNameContainingIvan();
 }

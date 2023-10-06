@@ -86,7 +86,6 @@ public class Picture {
         }
     };
 
-
     @Override
     public String toString() {
         return "Picture{" +

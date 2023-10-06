@@ -3,6 +3,7 @@ import ENTITY.PhotoStudio;
 import ENTITY.Picture;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args){
@@ -14,7 +15,7 @@ public class Main {
         PhotoStudio photoStudio = new PhotoStudio();
 
         Picture picture = new Picture(1, date, "Alice", OrderType.FAST, 0.5);
-        Picture picture2 = new Picture(3, date2, "Yana", OrderType.STANDARD, 1);
+        Picture picture2 = new Picture(3, date2, "Ivan", OrderType.STANDARD, 1);
         Picture picture5 = new Picture(5, date2, "Ana", OrderType.STANDARD, 5.4);
         Picture picture3 = new Picture(2,date3, "Vanesa", OrderType.EXPRESS, 3.4);
         Picture picture4 = new Picture(4,date4, "Bob", OrderType.EXPRESS, 2.1);
@@ -42,6 +43,22 @@ public class Main {
         photoStudio.pictureMoreThan2MB();
         System.out.println("\nDisplay pictures: STANDARD, FAST and EXPRESS: ");
         photoStudio.sortByOrderType();
+
+        LocalDate archiveDate = LocalDate.of(2023,10,5);
+        LocalDate archiveDate2 = LocalDate.of(2023,10,1);
+
+        photoStudio.addToArchive(picture, archiveDate);
+        photoStudio.addToArchive(picture2, archiveDate2);
+        photoStudio.addToArchive(picture3, archiveDate);
+        photoStudio.addToArchive(picture4, archiveDate2);
+        photoStudio.addToArchive(picture5, archiveDate2);
+        photoStudio.addToArchive(picture6, archiveDate);
+
+        System.out.println("\nDisplay archived pictures sorted by owner name.");
+        photoStudio.displayPictureArchiveByOwnerName();
+        System.out.println();
+        photoStudio.displayPictureArchiveByOwnerNameContainingIvan();
+
     }
 }
 
